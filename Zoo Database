@@ -1,0 +1,49 @@
+-- Create the database
+CREATE DATABASE zoo;
+
+-- Select the database to use
+USE zoo;
+
+-- Create the "animals" table
+CREATE TABLE animals (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  name VARCHAR(50),
+  species VARCHAR(50),
+  age INT,
+  enclosure_id INT
+);
+
+-- Create the "enclosures" table
+CREATE TABLE enclosures (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  name VARCHAR(50),
+  capacity INT
+);
+
+-- Create the "employees" table
+CREATE TABLE employees (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  first_name VARCHAR(50),
+  last_name VARCHAR(50),
+  role VARCHAR(50),
+  hire_date DATE
+);
+
+-- Create the "visitors" table
+CREATE TABLE visitors (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  first_name VARCHAR(50),
+  last_name VARCHAR(50),
+  email VARCHAR(100),
+  visit_date DATE
+);
+
+-- Create the "tickets" table
+CREATE TABLE tickets (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  visitor_id INT,
+  ticket_type VARCHAR(50),
+  price DECIMAL(10, 2),
+  purchase_date DATE,
+  FOREIGN KEY (visitor_id) REFERENCES visitors(id)
+);
