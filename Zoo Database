@@ -47,3 +47,47 @@ CREATE TABLE tickets (
   purchase_date DATE,
   FOREIGN KEY (visitor_id) REFERENCES visitors(id)
 );
+
+-- Insert data into the "animals" table
+INSERT INTO animals (name, species, age, enclosure_id)
+VALUES
+  ('Leo', 'Lion', 5, 1),
+  ('Tara', 'Tiger', 3, 2),
+  ('Roxy', 'Elephant', 12, 3),
+  ('Max', 'Gorilla', 7, 4),
+  ('Buddy', 'Chimpanzee', 4, 4);
+
+-- Insert data into the "enclosures" table
+INSERT INTO enclosures (name, capacity)
+VALUES
+  ('Lion Habitat', 4),
+  ('Tiger Enclosure', 3),
+  ('Elephant Sanctuary', 6),
+  ('Primate Paradise', 10);
+
+-- Insert data into the "employees" table
+INSERT INTO employees (first_name, last_name, role, hire_date)
+VALUES
+  ('John', 'Doe', 'Zookeeper', '2020-01-15'),
+  ('Emma', 'Smith', 'Veterinarian', '2018-05-10'),
+  ('Michael', 'Johnson', 'Tour Guide', '2019-09-01'),
+  ('Olivia', 'Davis', 'Ticket Seller', '2021-03-20');
+
+-- Insert data into the "visitors" table
+INSERT INTO visitors (first_name, last_name, email, visit_date)
+VALUES
+  ('Alice', 'Brown', 'alice@example.com', '2023-06-10'),
+  ('Robert', 'Wilson', 'robert@example.com', '2023-06-12'),
+  ('Sophia', 'Taylor', 'sophia@example.com', '2023-06-15'),
+  ('Daniel', 'Anderson', 'daniel@example.com', '2023-06-18');
+
+-- Insert data into the "tickets" table
+INSERT INTO tickets (visitor_id, ticket_type, price, purchase_date)
+VALUES
+  (1, 'Adult', 25.99, '2023-06-09'),
+  (1, 'Child', 15.99, '2023-06-09'),
+  (2, 'Adult', 25.99, '2023-06-11'),
+  (3, 'Senior', 19.99, '2023-06-14'),
+  (3, 'Adult', 25.99, '2023-06-14'),
+  (4, 'Adult', 25.99, '2023-06-17'),
+  (4, 'Child', 15.99, '2023-06-17');
