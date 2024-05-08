@@ -1,10 +1,14 @@
--- Create the database
+Create the database
 CREATE DATABASE zoo;
 
--- Select the database to use
+Select the database to use
 USE zoo;
 
--- Create the "animals" table
+---------------------------------------------------------------------------------------
+-- 1. Create tables.
+---------------------------------------------------------------------------------------
+
+Create the "animals" table
 CREATE TABLE animals (
   id INT PRIMARY KEY AUTO_INCREMENT,
   name VARCHAR(50),
@@ -13,14 +17,14 @@ CREATE TABLE animals (
   enclosure_id INT
 );
 
--- Create the "enclosures" table
+Create the "enclosures" table
 CREATE TABLE enclosures (
   id INT PRIMARY KEY AUTO_INCREMENT,
   name VARCHAR(50),
   capacity INT
 );
 
--- Create the "employees" table
+Create the "employees" table
 CREATE TABLE employees (
   id INT PRIMARY KEY AUTO_INCREMENT,
   first_name VARCHAR(50),
@@ -29,7 +33,7 @@ CREATE TABLE employees (
   hire_date DATE
 );
 
--- Create the "visitors" table
+Create the "visitors" table
 CREATE TABLE visitors (
   id INT PRIMARY KEY AUTO_INCREMENT,
   first_name VARCHAR(50),
@@ -47,6 +51,10 @@ CREATE TABLE tickets (
   purchase_date DATE,
   FOREIGN KEY (visitor_id) REFERENCES visitors(id)
 );
+
+---------------------------------------------------------------------------------------
+-- 2. Populate tables.
+---------------------------------------------------------------------------------------
 
 -- Insert data into the "animals" table
 INSERT INTO animals (name, species, age, enclosure_id)
@@ -91,3 +99,12 @@ VALUES
   (3, 'Adult', 25.99, '2023-06-14'),
   (4, 'Adult', 25.99, '2023-06-17'),
   (4, 'Child', 15.99, '2023-06-17');
+
+
+-- Check tables:
+SELECT * FROM animals;
+SELECT * FROM enclosures;
+SELECT * FROM employees;
+SELECT * FROM visitors;
+SELECT * FROM tickets;
+
